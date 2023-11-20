@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=20:antialias=true:autohint=true";
-static char *font2[] = { "NotoColorEmoji:pixelsize=25:antialias=true:autohint=true" };
+static char *font = "Liberation Mono:pixelsize=20:antialias=true:autohint=true";
+static char *font2[] = { "Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
@@ -95,38 +95,46 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.9;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	[0] = "#282828",
-	[1] = "#cc241d",
-	[2] = "#98971a", 
-	[3] = "#d79921", 
-	[4] = "#458588", 
-	[5] = "#b16286", 
-	[6] = "#689d6a", 
-	[7] = "#a89984", 
+	"#3b4252", 
+	"#bf616a", 
+	"#a3be8c", 
+	"#ebcb8b", 
+	"#81a1c1", 
+	"#b48ead", 
+	"#88c0d0", 
+	"#e5e9f0", 
+
 	/* 8 bright colors */
-	[8]  = "#928374", 
-	[9]  = "#fb4934", 
-	[10] = "#b8bb26", 
-	[11] = "#fabd2f", 
-	[12] = "#83a598", 
-	[13] = "#d3869b", 
-	[14] = "#8ec07c", 
-	[15] = "#ebdbb2", 
+	"#4c566a", 
+	"#bf616a", 
+	"#a3be8c", 
+	"#ebcb8b", 
+	"#81a1c1", 
+	"#b48ead", 
+	"#8fbcbb", 
+	"#eceff4", 
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#d8dee9", 
+	"#2e3440", 
 
 };
+
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 15;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
 /*
