@@ -1,34 +1,65 @@
-st - simple terminal
---------------------
-st is a simple terminal emulator for X which sucks less.
+# Simple Terminal (st) - Suckless
 
+O Simple Terminal (st) é um emulador de terminal leve e simples para sistemas Unix, desenvolvido pela suckless.org. Ele é projetado para ser eficiente, seguindo o princípio "só faça uma coisa e faça bem". O st é altamente personalizável e pode ser facilmente adaptado às necessidades individuais.
 
-Requirements
-------------
-In order to build st you need the Xlib header files.
+## Características Principais
 
+- **Simplicidade**: Sua filosofia é manter-se mínimo e simples, sem recursos desnecessários.
+- **Personalização**: É altamente configurável por meio do código-fonte, permitindo ajustes para atender às preferências do usuário.
+- **Leveza**: Tenta consumir o mínimo de recursos possível, ideal para sistemas com recursos limitados.
+- **Suporte Xft**: Oferece suporte à renderização de fontes TrueType (TTF) por meio da biblioteca Xft.
+- **Seleção e Copiar-Colar**: Suporta seleção de texto e copiar-colar com o mouse.
 
-Installation
-------------
-Edit config.mk to match your local setup (st is installed into
-the /usr/local namespace by default).
+## Instalação
 
-Afterwards enter the following command to build and install st (if
-necessary as root):
+Para instalar o st, você pode seguir estes passos:
 
-    make clean install
+1. Clonar o repositório:
 
+   ```
+   git clone https://git.suckless.org/st
+   ```
 
-Running st
-----------
-If you did not install st with make clean install, you must compile
-the st terminfo entry with the following command:
+2. Entrar no diretório do st:
 
-    tic -sx st.info
+   ```
+   cd st
+   ```
 
-See the man page for additional details.
+3. Editar o `config.def.h` conforme suas preferências:
 
-Credits
--------
-Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
+   ```
+   cp config.def.h config.h
+   ```
 
+4. Compilar e instalar o st:
+
+   ```
+   sudo make clean install
+   ```
+
+## Uso
+
+Após a instalação, execute o st a partir do seu terminal atual ou através de um gerenciador de inicialização de aplicativos.
+
+Exemplo de comando para executar o st:
+
+```
+st
+```
+
+## Personalização
+
+A personalização do st é feita diretamente editando o arquivo `config.h`, que contém as configurações principais. Isso permite ajustar cores, fontes, atalhos de teclado e outras preferências.
+
+## Contribuindo
+
+O st é um projeto de código aberto mantido pela comunidade. Se você deseja contribuir, sinta-se à vontade para fazer sugestões, reportar problemas ou enviar solicitações de pull para o repositório oficial em [suckless.org](https://git.suckless.org/st).
+
+## Documentação
+
+Para mais detalhes sobre o uso e configuração do st, consulte a documentação no diretório `man` após a instalação ou visite o site oficial da suckless.org.
+
+---
+
+Este README oferece uma visão geral básica do st e fornece instruções simples de instalação e uso. Sinta-se à vontade para adicionar mais detalhes, capturas de tela ou instruções específicas para sua configuração pessoal.
